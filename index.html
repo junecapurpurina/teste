@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EatBox - Embalagens Alimentícias</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #666;
+      background-color: #fff;
+      line-height: 1.7em;
+      font-weight: 500;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top bar */
+    .top-bar {
+      background-image: url('caminho/para/sua/imagem_de_fundo.jpg'); /* Substitua pelo caminho da sua imagem */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100px; /* Ajuste a altura conforme necessário */
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    /* Header */
+    header {
+      
+      position: relative;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0; /* Ajuste o padding conforme necessário */
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      padding: 0 2rem; /* Ajuste o padding conforme necessário */
+    }
+
+    .logo {
+      width: 120px;
+      height: 50px;
+      border-radius: 8px;
+      background-color: #e6281b;
+      color: #fff;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    nav {
+      padding: 0 2rem; /* Ajuste o padding conforme necessário */
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+
+    nav a.selected {
+      color: #e6281b;
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 100%; /* Alterado para 100% */
+      margin: 140px auto 0; /* Ajuste a margem conforme necessário */
+      padding: 20px;
+    }
+
+    .section {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 1,5rem;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    /* Destaques */
+    .swiper-container {
+      margin-bottom: 80px;
+    }
+
+    .swiper-slide {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;Error: There is already an account associated with your GitHub email address. Please login with your email and password then link your GitHub accountError: There is already an account associated with your GitHub email address. Please login with your email and password then link your GitHub account
+      margin-right: 0; /* Remova a margem direita */
+    }
+
+    .swiper-slide img {
+      max-width: 100%;
+      height: 450px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease; /* Transição para a animação de relevo */
+    }
+
+    .swiper-slide img:hover {
+      transform: scale(1.05); /* Aumenta ligeiramente o tamanho da imagem */
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Adiciona sombra para dar efeito de relevo */
+    }
+
+    /* Por Que Escolher */
+    .feature-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
+    .feature {
+      flex: 1;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 0 10px;
+    }
+
+    .feature h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .feature p {
+      font-size: 1.2rem;
+    }
+
+    /* Formulário */
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    form button {
+      background-color: #e6281b;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #c82333;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #e6281b;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    /* Estilos para as redes sociais */
+    .social-media {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .social-icon {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .social-icon img {
+      width: 30px;
+    }
+
+    /* Estilos para a colagem de fotos */
+    .collage-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .collage {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr); /* 5 colunas */
+      grid-gap: 10px;
+    }
+
+    .collage img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease; /* Transição para a animação de relevo */
+    }
+
+    .collage img:hover {
+      transform: scale(1.05); /* Aumenta ligeiramente o tamanho da imagem */
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Adiciona sombra para dar efeito de relevo */
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<header>
+  <div class="logo-container">
+    <a href="#" class="logo">EatBox</a>
+  </div>
+
+  <nav>
+    <a href="#destaques">Destaques</a>
+    <a href="#por-que-escolher">Por Que Escolher</a>
+    <a href="#contato">Contato</a>
+    <a href="#localizacao">Localização</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <section id="destaques" class="section">
+    <h2>Destaques</h2>
+
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="caminho/para/imagem1.jpg" alt="Imagem 1">
+        </div>
+        <div class="swiper-slide">
+          <img src="caminho/para/imagem2.jpg" alt="Imagem 2">
+        </div>
+        <!-- Adicione mais imagens conforme necessário -->
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+
+  <!-- Box para várias fotos -->
+  <section id="fotos" class="section">
+    <h2>Fotos de nossos serviços</h2>
+    <!-- Adicione aqui as suas fotos -->
+    <div class="collage-container">
+      <div class="collage">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0020.jpg" alt="Foto 1">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0047.jpg" alt="Foto 2">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0042.jpg" alt="Foto 3">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0062.jpg" alt="Foto 4">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0065.jpg" alt="Foto 5">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0066.jpg" alt="Foto 6">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0048.jpg" alt="Foto 7">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0041.jpg" alt="Foto 8">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0023.jpg" alt="Foto 9">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0045.jpg" alt="Foto 10">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0049.jpg" alt="Foto 11">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0052.jpg" alt="Foto 12">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0053.jpg" alt="Foto 13">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0061.jpg" alt="Foto 14">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0057.jpg" alt="Foto 15">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0060.jpg" alt="Foto 16">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0056.jpg" alt="Foto 17">
+        <img src="C:\Users\alber\OneDrive\Desktop\EAT\img\IMG-20240215-WA0062.jpg" alt="Foto 18">
+        <!-- Adicione mais fotos conforme necessário -->
+      </div>
+    </div>
+  </section>
+
+  <section id="por-que-escolher" class="section">
+    <h2>Por Que Escolher</h2>
+   <h2>
+    Escolha a EatBox Embalagens Alimentícias para uma experiência de embalagem excepcional. 
+    Nossos produtos combinam qualidade, praticidade e estilo, garantindo que seus alimentos sejam embalados com segurança e apresentação impecável.
+    Confie na EatBox para elevar a experiência do seu produto alimentício
+   </h2>
+    
+
+  </section>
+
+  <section id="contato" class="section">
+    <h2>Contato</h2>
+    <form method="post" action="send_email.php">
+      <input type="text" name="name" placeholder="Nome" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Telefone">
+
+      <textarea name="message" placeholder="Mensagem"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    
+    <!-- Links para Instagram e WhatsApp -->
+    <div class="social-media">
+      <a href="https://www.instagram.com/eatboxembalagens/?igsh=amlpOHdzNnU3bmgw" class="social-icon" target="_blank"><img src="C:\Users\alber\OneDrive\Desktop\EAT\img\ins.png" alt="Ícone do Instagram"></a>
+      <a href="https://wa.me/5511999855395" class="social-icon" target="_blank"><img src="C:\Users\alber\OneDrive\Desktop\EAT\img\LIN.png" alt="Ícone do WhatsApp"></a>
+      <!-- Adicione mais ícones conforme necessário -->
+    </div>
+  </section>
+
+  <!-- Seção de localização com mapa incorporado -->
+  <section id="localizacao" class="section">
+    <h2>Localização</h2>
+    <!-- Conteúdo do mapa incorporado aqui -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.8333081504494!2d-46.8906083!3d-23.4955136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf0396cf068c33%3A0xfe72fb88330a1107!2sForma%20Pack%20Gr%C3%A1fica%20Editora!5e0!3m2!1sen!2sbr!4v1645370314576!5m2!1sen!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2024 EatBox - Todos os direitos reservados.</p>
+</footer>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 5000, // Tempo de cada slide em milissegundos
+    },
+    spaceBetween: 0, // Espaço entre os slides
+  });
+</script>
+
+</body>
+</html>
